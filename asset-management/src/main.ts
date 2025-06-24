@@ -29,7 +29,7 @@ import './assets/styles/global.css'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDmqdqmfPREds3h5N8Msnx3wbu9IaihHQQ",
+  apiKey: "",
   authDomain: "asset-management-c67d4.firebaseapp.com",
   projectId: "asset-management-c67d4",
   storageBucket: "asset-management-c67d4.firebasestorage.app",
