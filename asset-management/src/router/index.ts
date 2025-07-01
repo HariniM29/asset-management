@@ -120,7 +120,7 @@ const routes: Array<RouteRecordRaw> = [
 {
     path: "/asset-page",
     component: () => import("../views/AssetsPage.vue"),
-    meta: { requiresAuth: true },
+    // meta: { requiresAuth: true },
   },
   {
     path: "/asset-page/:assetId",
