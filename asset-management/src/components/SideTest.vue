@@ -1,8 +1,7 @@
 <template>
   <v-layout>
- 
     <v-app-bar color="white" elevation="0">
-      <v-app-bar-nav-icon @click="drawer = !drawer" v-if="isMobile"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer" v-if="isMobile" />
       <v-toolbar-title>Asset Management</v-toolbar-title>
     </v-app-bar>
 
@@ -11,11 +10,11 @@
       v-model="drawer"
       :rail="rail && !isMobile"
       :temporary="isMobile"
-      @click="isMobile && (drawer = false)" 
+      @click="isMobile && (drawer = false)"
     >
       <!-- Header -->
       <v-list-item
-         style="margin-left: 6px; margin-top: 12px; color: black"
+        style="margin-left: 6px; margin-top: 12px; color: black"
         class="custom-active-color"
         prepend-avatar="../images/asset-page-logo-3.png"
         title="Asset Management"
@@ -24,12 +23,13 @@
           <v-btn
             v-if="!isMobile"
             icon="mdi-chevron-left"
-            @click.stop="rail = !rail" class="sidebar-chevron"
-          ></v-btn>
+            @click.stop="rail = !rail"
+            class="sidebar-chevron"
+          />
         </template>
       </v-list-item>
 
-      <v-divider></v-divider>
+      <v-divider />
 
       <!-- Navigation Links -->
       <v-list density="compact" nav>
@@ -38,17 +38,15 @@
           title="Dashboard"
           @click="navigate('/dashboard-page')"
           :class="{ 'active-nav': currentRoute === '/dashboard-page' }"
-        ></v-list-item>
-
+        />
         <v-list-item
           prepend-icon="mdi mdi-folder-multiple-plus-outline"
           title="Asset Page"
           @click="navigate('/asset-page')"
           :class="{
-            'active-nav': currentRoute === '/asset-page' ||
-            currentRoute.startsWith('/asset-page/'),
+            'active-nav': currentRoute === '/asset-page' || currentRoute.startsWith('/asset-page/')
           }"
-        ></v-list-item>
+        />
       </v-list>
 
       <!-- Logout -->
@@ -56,42 +54,37 @@
         prepend-icon="mdi-logout"
         title="Logout"
         @click="logout"
-        class="logout-nav"  style="color: #198754"
-      ></v-list-item>
+        class="logout-nav"
+        style="color: #198754"
+      />
     </v-navigation-drawer>
 
     <!-- Main Content -->
-    <v-main style="height: 250px"></v-main>
+    <v-main style="height: 250px" />
   </v-layout>
 </template>
 
 <script lang="ts" setup>
-import { useRoute, useRouter } from 'vue-router';
 import { ref, computed } from 'vue';
-import { getAuth, signOut } from 'firebase/auth';
+import { useRouter, useRoute } from 'vue-router';
 import { useDisplay } from 'vuetify';
 
 const drawer = ref(true);
 const rail = ref(false);
 const router = useRouter();
 const route = useRoute();
-const { mobile } = useDisplay(); 
+const { mobile } = useDisplay();
 const isMobile = computed(() => mobile.value);
 const currentRoute = computed(() => route.path);
 
 const navigate = (path: string) => {
   router.push(path);
-  if (isMobile.value) drawer.value = false; 
+  if (isMobile.value) drawer.value = false;
 };
 
-const logout = async () => {
-  try {
-    const auth = getAuth();
-    await signOut(auth);
-    navigate('/login-page');
-  } catch (error) {
-    console.error('Logout error:', error);
-  }
+const logout = () => {
+  console.log('Logging out (no Firebase)');
+  router.push('/login-page');
 };
 </script>
 
