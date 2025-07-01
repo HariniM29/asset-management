@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from '../src/router/index'
-import { getAuth } from 'firebase/auth';
+// import { getAuth } from 'firebase/auth';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import { createPinia } from 'pinia';
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 import "firebase/auth";
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from 'chart.js';
 ChartJS.register(Title, Tooltip, Legend, ArcElement);
@@ -28,18 +28,18 @@ import './assets/styles/global.css'
 // import 'vue3-datepicker/dist/vue3-datepicker.css';
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "",
-  authDomain: "asset-management-c67d4.firebaseapp.com",
-  projectId: "asset-management-c67d4",
-  storageBucket: "asset-management-c67d4.firebasestorage.app",
-  messagingSenderId: "477182012947",
-  appId: "1:477182012947:web:bab45814dff855692919e6"
-};
+// const firebaseConfig = {
+//   apiKey: "",
+//   authDomain: "asset-management-c67d4.firebaseapp.com",
+//   projectId: "asset-management-c67d4",
+//   storageBucket: "asset-management-c67d4.firebasestorage.app",
+//   messagingSenderId: "477182012947",
+//   appId: "1:477182012947:web:bab45814dff855692919e6"
+// };
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-export const auth = getAuth(firebaseApp)
+// const firebaseApp = initializeApp(firebaseConfig);
+// export const auth = getAuth(firebaseApp)
 
 
 export default createVuetify({
