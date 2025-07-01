@@ -1,66 +1,85 @@
 <template>
   <v-layout>
-    <v-app-bar color="white" elevation="0">
-      <v-app-bar-nav-icon @click="drawer = !drawer" v-if="isMobile" />
-      <v-toolbar-title>Asset Management</v-toolbar-title>
+  
+    <v-app-bar  elevation="0" v-if="isMobile">
+      <v-app-bar-nav-icon @click="drawer = !drawer" style="font-size: 15px;"></v-app-bar-nav-icon>
+      <!-- <v-toolbar-title style="font-size: 15px;">Asset Management</v-toolbar-title> -->
     </v-app-bar>
 
-    <!-- Navigation Drawer -->
+  
+    <!-- <v-navigation-drawer
+      v-model="drawer"
+      :rail="rail && !isMobile"  
+      :temporary="isMobile"  
+      @click="isMobile && (drawer = false)"
+      :permanent="!isMobile"
+    > -->
+    <!-- <v-navigation-drawer
+      v-model="drawer"
+      :rail="rail" 
+      permanent
+      @click="rail = false"
+    > -->
     <v-navigation-drawer
       v-model="drawer"
-      :rail="rail && !isMobile"
-      :temporary="isMobile"
-      @click="isMobile && (drawer = false)"
+      :rail="rail && !isMobile"  
+      :temporary="isMobile" 
+      :permanent="!isMobile"
+      @click="rail = false"
     >
-      <!-- Header -->
+     
       <v-list-item
-        style="margin-left: 6px; margin-top: 12px; color: black"
+        style="margin-left: -1px; margin-top: 12px; color: black"
         class="custom-active-color"
         prepend-avatar="../images/asset-page-logo-3.png"
         title="Asset Management"
       >
         <template v-slot:append>
+     
           <v-btn
-            v-if="!isMobile"
+            v-if="!isMobile" 
             icon="mdi-chevron-left"
-            @click.stop="rail = !rail"
+         
             class="sidebar-chevron"
-          />
+              @click.stop="rail = !rail"
+            
+          ></v-btn>
         </template>
       </v-list-item>
 
-      <v-divider />
+      <v-divider></v-divider>
 
-      <!-- Navigation Links -->
+   
       <v-list density="compact" nav>
         <v-list-item
           prepend-icon="mdi-view-dashboard-outline"
           title="Dashboard"
           @click="navigate('/dashboard-page')"
           :class="{ 'active-nav': currentRoute === '/dashboard-page' }"
-        />
+        ></v-list-item>
+
         <v-list-item
-          prepend-icon="mdi mdi-folder-multiple-plus-outline"
+          prepend-icon="mdi-folder-multiple-plus-outline"
           title="Asset Page"
           @click="navigate('/asset-page')"
           :class="{
-            'active-nav': currentRoute === '/asset-page' || currentRoute.startsWith('/asset-page/')
+            'active-nav': currentRoute === '/asset-page' ||
+            currentRoute.startsWith('/asset-page/'),
           }"
-        />
+        ></v-list-item>
       </v-list>
 
-      <!-- Logout -->
+     
       <v-list-item
         prepend-icon="mdi-logout"
         title="Logout"
         @click="logout"
-        class="logout-nav"
-        style="color: #198754"
-      />
+        class="logout-nav" style="color: #198754"
+      ></v-list-item>
     </v-navigation-drawer>
 
-    <!-- Main Content -->
-    <v-main style="height: 250px" />
+   
+    <v-main style="height: 250px"></v-main>
   </v-layout>
 </template>
 
