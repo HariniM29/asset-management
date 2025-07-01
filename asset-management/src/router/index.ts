@@ -48,7 +48,7 @@ const router = createRouter({
 // Wait for Firebase to initialize the auth state
 let isAuthInitialized = false;
 
-const ensureAuthInitialized = async (): Promise<void> => {
+/*const ensureAuthInitialized = async (): Promise<void> => {
   if (isAuthInitialized) return;
   await new Promise<void>((resolve) => {
     const unsubscribe = onAuthStateChanged(getAuth(), () => {
@@ -57,7 +57,25 @@ const ensureAuthInitialized = async (): Promise<void> => {
       resolve();
     });
   });
+};*/
+
+const ensureAuthInitialized = async (): Promise<void> => {
+  if (isAuthInitialized) return;
+
+  try {
+    await new Promise<void>((resolve) => {
+      const unsubscribe = onAuthStateChanged(getAuth(), () => {
+        isAuthInitialized = true;
+        unsubscribe(); // Stop listening once the state is known
+        resolve();
+      });
+    });
+  } catch (err) {
+    console.warn("Firebase auth not available, skipping auth init.");
+    isAuthInitialized = true;
+  }
 };
+
 
 // Navigation Guard
 router.beforeEach(async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
