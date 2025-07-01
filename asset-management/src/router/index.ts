@@ -117,6 +117,16 @@ const routes: Array<RouteRecordRaw> = [
     path: "/dashboard-page",
     component: () => import("../views/DashBoard.vue"),
   },
+{
+    path: "/asset-page",
+    component: () => import("../views/AssetsPage.vue"),
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/asset-page/:assetId",
+    component: () => import("../views/AssetDetailPage.vue"),
+    props: true,
+  },
 ];
 
 const router = createRouter({
