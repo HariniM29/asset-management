@@ -123,102 +123,115 @@ const register = () => {
   z-index: 9999;
 }
 .toast-success {
-  background-color: #28a745;
+  background-color: #28a745; /* Green for success */
   color: white;
 }
 .toast-error {
-  background-color: #dc3545;
+  background-color: #dc3545; /* Red for error */
   color: white;
+  border: none;
 }
+
 .form-label {
   margin-bottom: 0.3rem !important;
   font-size: 13px;
   color: #212529;
 }
+
 .form-control {
   border-radius: 7px !important;
   box-shadow: 0 0px 2px rgb(184 199 210) !important;
   border: none !important;
 }
+
 ::placeholder {
   font-size: 14px;
 }
+
 .login-btn {
   width: 200px;
   margin-top: 2rem;
   background-color: #14b789;
   color: white;
-  font-weight: 500;
-}
-.login-body {
-  background-color: #d1eae2;
-}
-.login-title {
-  margin-top: 1rem;
-  color: #1dab83;
-  font-weight: 500;
-  font-size: 20px;
-}
-.sign-in-title {
-  color: #343a40;
-  font-size: 14px;
-}
-.email-container {
-  margin-bottom: 1rem;
-}
-.account {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+  font-weight: 500;
 }
-.error-message {
-  color: red;
-  font-size: 0.7rem;
-  position: absolute;
+.login-body{
+  background-color: #d1eae2
 }
-@media only screen and (max-width: 480px) {
-  .login-body {
-    background-color: white;
+.login-title{
+    margin-top: 1rem;
+    color: #1dab83;
+    font-weight: 500;
+    font-size: 20px ;
   }
-  .box-area {
+  .sign-in-title{
+  color: #343a40; font-size: 14px
+ 
+  }
+  .email-container{
+   margin-bottom: 1rem;
+  }
+  .login-btn{
+    
+                  width: 200px;
+                  margin-top: 2rem;
+                  background-color: #14b789;
+                  color: white;
+                  font-weight: 00;
+                
+  }
+  .account{
+   
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-top: 20px;
+                
+  }
+@media only screen and (max-width:480px){
+  .login-body{
+   background-color: white;
+  }
+  .box-area{
     border-radius: none;
-    border: none !important;
+    border:none !important;
     box-shadow: none !important;
     padding: 10px !important;
   }
-  .login-image {
-    width: 17rem !important;
+  .login-image{
+    width:17rem !important;
   }
-  .login-title {
+  .login-title{
     margin-top: 0rem;
     color: #1dab83;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 15px ;
     margin-bottom: 0.1rem;
   }
-  .sign-in-title {
-    color: #343a40;
-    font-size: 13px;
+  .sign-in-title{
+  color: #343a40; font-size: 13px
   }
-  .email-container {
-    margin-bottom: 0.2rem;
+  .email-container{
+   margin-bottom: 0.2rem;
+  /* margin-top: 0.4rem */
   }
-  .form-label {
+  .form-label{
     font-size: 12px;
-    margin-top: 1.1rem;
+    margin-top:1.1rem
   }
-  .login-btn {
+  .login-btn{
     width: 9rem;
     margin-top: 1.5rem;
     font-size: 15px;
   }
-  .account {
-    margin-top: 0.5rem;
-    font-size: 12px;
-  }
-  .error-message {
-    font-size: 0.6rem;
-  }
+  .account{
+ 
+   margin-top: 0.5rem;
+   font-size: 12px;
+ 
+}
 }
 </style>
