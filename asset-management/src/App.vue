@@ -4,19 +4,11 @@
   <RouterView></RouterView>
 </div>
 </template>
+
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
 import SideBar from './components/SideBar.vue';
-import { ref, watch } from 'vue';
-
+import { computed } from 'vue';
 const route = useRoute();
-const showSidebar = ref(true);
-
-watch(
-  () => route.fullPath,
-  () => {
-    showSidebar.value = !route.meta?.hideSidebar;
-  },
-  { immediate: true }
-);
+const showSidebar = computed(() => !route.meta.hideSidebar);
 </script>
