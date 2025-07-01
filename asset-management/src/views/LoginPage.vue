@@ -98,30 +98,34 @@ const GoogleSignin = () => {
   console.log('Google Sign-In clicked (static build)');
 };
 </script>
-
 <style scoped>
 .mdi-eye::before {
-  content: "\F0208";
-  margin-top: -4rem;
-  margin-left: 49rem;
-  color: #343a40;
-  font-size: 18px;
+    content: "\F0208";
+    margin-top: -4rem;
+    margin-left: 49rem;
+    color: #343a40;
+    font-size: 18px;
 }
+
+
 .password-toggle-icon {
-  position: absolute;
-  top: 21.4rem;
-  right: 21rem;
-  font-size: 12px;
+ position: absolute;
+    top: 21.4rem;
+    right: 21rem;
+    font-size: 12px;
 }
+
+
 .box-area {
   width: 930px;
 }
 .error-msg {
-  color: red;
+  color: red; 
   font-size: 0.7rem;
   position: absolute;
   margin-top: 0.5rem;
 }
+
 .toast {
   position: fixed;
   top: 22px;
@@ -137,6 +141,7 @@ const GoogleSignin = () => {
   transition: opacity 0.5s ease;
   z-index: 9999;
 }
+
 .login-btn {
   width: 200px;
   margin-top: 2rem;
@@ -147,6 +152,7 @@ const GoogleSignin = () => {
   align-items: center;
   font-weight: 500;
 }
+
 .google-signin-btn {
   width: 100%;
   background-color: #e6f2ee;
@@ -154,101 +160,99 @@ const GoogleSignin = () => {
 .google-signin-btn:hover {
   background-color: #95b9af;
 }
+
 .form-label {
   margin-bottom: 0.3rem !important;
   font-size: 13px;
   color: #212529;
 }
+
 .form-control {
   border-radius: 7px !important;
   box-shadow: 0 0px 2px rgb(184 199 210) !important;
   border: none !important;
 }
+
 ::placeholder {
   font-size: 14px;
 }
-.login-body {
-  background-color: #d1eae2;
+
+.login-body{
+  background-color: #d1eae2
 }
-.login-title {
-  margin-top: 1rem;
-  color: #1dab83;
-  font-weight: 500;
-  font-size: 20px;
-}
-.sign-in-title {
-  color: #343a40;
-  font-size: 14px;
-}
-.email-container {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-.sign-in-or {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
-.sign-in-ggl {
-  font-size: 13px;
-}
-.account {
-  font-size: 13px;
-}
-@media only screen and (max-width: 480px) {
-  .login-body {
-    background-color: white;
+
+.login-title{
+    margin-top: 1rem;
+    color: #1dab83;
+    font-weight: 500;
+    font-size: 20px ;
   }
-  .box-area {
+  .sign-in-title{
+  color: #343a40; font-size: 14px
+  }
+  .email-container{
+   margin-bottom: 1rem; margin-top: 1rem
+  }
+  .sign-in-or{
+    display: flex; align-items: center; margin: 20px 0
+  }
+  .sign-in-ggl{
+    font-size: 13px;
+  }
+/* mobile*/
+@media only screen and (max-width:480px){
+  .login-body{
+   background-color: white;
+  }
+  .box-area{
     border-radius: none;
-    border: none !important;
+    border:none !important;
     box-shadow: none !important;
     padding: 10px !important;
   }
-  .login-image {
-    width: 14rem !important;
+  .login-image{
+    width:14rem !important;
   }
-  .login-title {
+  .login-title{
     margin-top: 0rem;
     color: #1dab83;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 15px ;
     margin-bottom: 0.1rem;
   }
-  .sign-in-title {
-    color: #343a40;
-    font-size: 13px;
+  .sign-in-title{
+  color: #343a40; font-size: 13px
   }
-  .email-container {
-    margin-bottom: 0.2rem;
-    margin-top: 0.4rem;
+  .email-container{
+   margin-bottom: 0.2rem; margin-top: 0.4rem
   }
-  .form-label {
+  .form-label{
     font-size: 12px;
-    margin-top: 1.1rem;
+    margin-top:1.1rem
   }
-  .login-btn {
+  .login-btn{
     width: 9rem;
     margin-top: 1.5rem;
     font-size: 15px;
   }
-  .sign-in-or {
-    margin: 0.2rem 0;
+  .sign-in-or{
+    margin: 0.2rem 0
   }
-  .sign-in-ggl {
+  .sign-in-ggl{
     font-size: 12px;
   }
-  .account {
+  .account{
     font-size: 12px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+        align-items: center;
+        justify-content: center;
   }
-  .error-msg {
+  .error-msg{
     color: red;
     font-size: 0.6rem;
     position: absolute;
     margin-top: 0.2rem;
-  }
+}
+  
 }
 </style>
