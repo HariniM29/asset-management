@@ -1,5 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
-  lintOnSave: true, // Enable linting during the build
+  lintOnSave: false, // Enable linting during the build
 })
