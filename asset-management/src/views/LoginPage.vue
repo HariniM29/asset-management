@@ -110,7 +110,7 @@ const GoogleSignin = () => {
 
 .password-toggle-icon {
  position: absolute;
-    top: 20.4rem;
+    top: 21.4rem;
     right: 21rem;
     font-size: 12px;
 }
