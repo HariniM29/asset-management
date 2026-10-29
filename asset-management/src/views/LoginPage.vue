@@ -30,11 +30,11 @@
                 placeholder="Password"
                 v-model="password"
               />
-              <span class="password-toggle-icon" @click="togglePasswordVisibility">
+             <!-- <span class="password-toggle-icon" @click="togglePasswordVisibility">
                 <v-icon :alt="showPassword ? 'Hide password' : 'Show password'" style="cursor: pointer">
                   {{ showPassword ? 'mdi-eye-off-outline' : 'mdi-eye-outline' }}
                 </v-icon>
-              </span>
+              </span> -->
               <p v-if="passwrdErrMsg" class="error-msg">{{ passwrdErrMsg }}</p>
             </div>
 
